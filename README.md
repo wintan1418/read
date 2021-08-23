@@ -1,6 +1,47 @@
-# Getting Started with Create React App
+# BookStore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+As the name describe this project is a store for book where you can add books that you are about to read to keep track of your progress in them.
+
+
+## Built With
+
+- create-react-app
+- ReactJS 17,
+- ReactDOM 17,
+- Babel,
+- Redux,
+- React Redux,
+- NodeJS,
+- ES6,
+
+## Live Demo
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://bookstoe.herokuapp.com/)
+
+## Getting Started
+
+### Prerequisites
+
+In order to have this project up and running you will need:
+
+- NodeJS 10+
+
+### Setup
+
+First, you need to clone this project using one of the links above, using this command:
+
+```Javascript
+git clone RESPOSITRY_LINK
+
+```
+
+Then you should run: `npm install`
+
+And afterward, you supposed to run: `npm run start`, to run the project in your local machine.
+
+Then head to the localhost on port 3000 `https://localhost:3000`
+
+Congrats the project is fully working.
 
 ## Available Scripts
 
@@ -39,32 +80,21 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+👤 Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Oluwadare Juwon
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github: [@Oluwadare Juwon](https://github.com/wintan1418)
+- Linkedin: (www.linkedin.com/in/oluwintan)
+- Twitter: [Oluwadare-juwon](https://twitter.com/@oluwadarejuwon)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🙋‍♂ show your support
 
-### Analyzing the Bundle Size
+give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 license
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](LICENSE) licensed.
