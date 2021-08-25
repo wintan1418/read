@@ -1,17 +1,10 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../action-shade';
+import { combineReducers, createStore } from 'redux';
+import bookReducer from './Book';
 
-const bookReducer = (state = [], action) => {
-  switch (action.type) {
-    case CREATE_BOOK:
-      return [
-        ...state,
-        action.book,
-      ];
-    case REMOVE_BOOK:
-      return state.filter(book => book.id !== action.book.id);
-    default:
-      return state;
-  }
-};
+const store = createStore(
+  combineReducers({ books: bookReducer }),
+  // eslint-disable-next-line no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
-export default bookReducer;
+export default store;
