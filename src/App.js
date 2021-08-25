@@ -1,15 +1,42 @@
-// import logo from './logo.svg';
 import React from 'react';
-import './App.css';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './component/App';
+import reportWebVitals from './reportWebVitals';
+import store from './reducers/index';
+import { createBook } from './action/index';
 
-function App() {
-  return (
+const intialState = [
+  {
+    bookID: Math.floor(Math.random() * 1000),
+    title: 'CHRONICLES OF CAMMUS',
+    category: 'Fantassy',
+  },
+  {
+    bookID: Math.floor(Math.random() * 1000),
+    title: 'Fast & Furious',
+    category: 'Action',
+  },
+  {
+    bookID: Math.floor(Math.random() * 1000),
+    title: 'Human Anatomie',
+    category: 'Learning',
+  },
+];
 
-    <div className="header">
-      <h1>jay library</h1>
-    </div>
+intialState.map(book => store.dispatch(createBook(book)));
 
-  );
-}
+const jsx = (
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
+);
 
-export default App;
+ReactDOM.render(
+  jsx,
+  document.getElementById('root'),
+);
+
+reportWebVitals();
