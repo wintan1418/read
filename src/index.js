@@ -14,7 +14,7 @@ const intialState = [
   },
   {
     bookID: Math.floor(Math.random() * 1000),
-    title: 'Fast & Furious',
+    title: 'Fasts & Furious',
     category: 'Action',
   },
   {
