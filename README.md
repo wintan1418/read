@@ -16,7 +16,7 @@ As the name describe this project is a store for book where you can add books th
 
 ## Live Demo
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://bookstoe.herokuapp.com/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://angry-almeida-a0da1b.netlify.app/)
 
 ## Getting Started
 
