@@ -17,16 +17,7 @@ const intialState = [
     title: 'Fasts & Furious',
     category: 'Actions',
   },
-  {
-    bookID: Math.floor(Math.random() * 1000),
-    title: 'HUMAN GENETICS',
-    category: 'Learning',
-  },
-  {
-    bookID: Math.floor(Math.random() * 1000),
-    title: 'Power Rangers',
-    category: 'Kids',
-  },
+
 ];
 
 intialState.map(book => store.dispatch(createBook(book)));
