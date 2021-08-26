@@ -1,33 +1,25 @@
 import React from 'react';
+import { categories, generateRandomNumber } from '../list';
 
-const bookCategories = [
-  'Action',
-  'History',
-  'Biography',
-  'Sci-fi',
-  'Horror',
-  'Kids',
-  'Learniing',
-];
-
-const BookForm = () => (
-  <form>
-    <div className="input-group">
-      <input type="text" />
+const BookForm = () => {
+  const allCategories = categories.map(category => (
+    <option
+      key={generateRandomNumber()}
+      value={category}
+    >
+      {category}
+    </option>
+  ));
+  return (
+    <div>
+      <form action="">
+        <input type="text" name="title" placeholder="Input your title" />
+        <select name="category" id="category" placeholder="Category">
+          {allCategories}
+        </select>
+        <button type="submit">Add Book</button>
+      </form>
     </div>
-    <div className="input-group">
-      <select name="book-categories" id="categories">
-        {
-          bookCategories.map(category => (
-            <option key={`key-${category}`} value={category}>
-              {category}
-            </option>
-          ))
-        }
-      </select>
-    </div>
-    <button type="button">Submit</button>
-  </form>
-);
-
+  );
+};
 export default BookForm;
