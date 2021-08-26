@@ -1,17 +1,13 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../action-shade';
+import { CREATE_BOOK, REMOVE_BOOK } from '../action-shade/index';
+import { defaultBooks } from '../list';
 
-const bookReducer = (state = [], action) => {
-  switch (action.type) {
+export default (state = defaultBooks, { type, payload }) => {
+  switch (type) {
     case CREATE_BOOK:
-      return [
-        ...state,
-        action.book,
-      ];
+      return [...state, payload];
     case REMOVE_BOOK:
-      return state.filter(book => book.id !== action.book.id);
+      return state.filter(book => book.id !== payload);
     default:
       return state;
   }
 };
-
-export default bookReducer;

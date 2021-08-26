@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './component/App';
-import reportWebVitals from './reportWebVitals';
-import store from './reducers/index';
-import { createBook } from './action/index';
-import { render } from '@testing-library/react';
+import rootReducer from './reducers';
 
 const store = createStore(
   rootReducer,
