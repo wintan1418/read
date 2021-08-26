@@ -5,34 +5,17 @@ import App from './component/App';
 import reportWebVitals from './reportWebVitals';
 import store from './reducers/index';
 import { createBook } from './action/index';
+import { render } from '@testing-library/react';
 
-const intialState = [
-  {
-    bookID: Math.floor(Math.random() * 1000),
-    title: 'CHRONICLES OF CAMMUS',
-    category: 'Fantassy',
-  },
-  {
-    bookID: Math.floor(Math.random() * 1000),
-    title: 'Fasts & Furious',
-    category: 'Actions',
-  },
+const store = createStore(
+  rootReducer,
+);
 
-];
-
-intialState.map(book => store.dispatch(createBook(book)));
-
-const jsx = (
+ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Provider>
-);
-
-ReactDOM.render(
-  jsx,
+  </Provider>,
   document.getElementById('root'),
 );
-
-reportWebVitals();
