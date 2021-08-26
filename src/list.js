@@ -1,6 +1,7 @@
 export const generateRandomNumber = (range = 10000) => Math.floor(Math.random() * range);
 
-export const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+export const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids',
+  'Learning', 'Sci-Fi'];
 
 export const defaultBooks = [
   {

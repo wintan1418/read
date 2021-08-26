@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { CREATE_BOOK, REMOVE_BOOK } from '../action-shade/index';
 import { defaultBooks } from '../list';
 
