@@ -1,7 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addBook } from '../actions';
 import { categories, generateRandomNumber } from '../list';
 
-const BookForm = () => {
+const initialValue = {
+  author: '',
+  category: '',
+
+}; const BookForm = ({ createBook }) => {
+  const [Input, setInput] = useState(initialValue);
   const allCategories = categories.map(category => (
     <option
       key={generateRandomNumber()}
