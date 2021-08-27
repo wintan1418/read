@@ -5,17 +5,17 @@ export const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids',
 
 export const defaultBooks = [
   {
-    bookID: generateRandomNumber(),
+    id: generateRandomNumber(),
     title: 'SHERLOCK OF HOLMES',
     category: categories[generateRandomNumber(categories.length)],
   },
   {
-    bookID: generateRandomNumber(),
+    id: generateRandomNumber(),
     title: 'INTO THE MULTIVERSE',
     category: categories[generateRandomNumber(categories.length)],
   },
   {
-    bookID: generateRandomNumber(),
+    id: generateRandomNumber(),
     title: 'DANCE WITH ME',
     category: categories[generateRandomNumber(categories.length)],
   },

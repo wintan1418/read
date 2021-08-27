@@ -2,10 +2,11 @@ import { CREATE_BOOK, REMOVE_BOOK } from '../action-shade';
 
 export const createBook = book => ({
   type: CREATE_BOOK,
-  book,
+  payload: book,
 });
 
-export const removeBook = book => ({
+export const removeBook = id => ({
   type: REMOVE_BOOK,
-  book,
+  payload: id,
+
 });

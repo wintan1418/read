@@ -20,7 +20,7 @@ const BookList = ({ books, deleteBook }) => {
     <table>
       <thead>
         <tr>
-          <th>BookID</th>
+          <th>id</th>
           <th>Title</th>
           <th>Category</th>
           <th>Action</th>
@@ -29,16 +29,7 @@ const BookList = ({ books, deleteBook }) => {
       <tbody>
         {allBooks}
       </tbody>
-      {
-    books.map(book => (
-      <Book
-        bookID={book.bookID}
-        key={book.bookID}
-        title={book.title}
-        category={book.category}
-      />
-    ))
-  }
+
     </table>
 
   );
