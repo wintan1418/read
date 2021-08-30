@@ -2,11 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../component/Book';
-import { removeBook } from '../action';
-import { generateRandomNumber } from '../list';
+import { removeBook, filterBook } from '../action';
+import { generateRandomNumber, filterBooksByCategory } from '../list';
+import Filter from '../components/categoryFilter';
 
-const BookList = ({ books, deleteBook }) => {
+const BookList = ({
+  books, deleteBook, filterBook, filterParam,
+}) => {
   const handleRemoveBook = id => deleteBook(id);
+  const handleFilter = b => filterBooks(b.target.value);
 
   const allBooks = books.map(book => (
     <Book
