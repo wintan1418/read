@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../component/Book';
-import { removeBook, filterBook } from '../action';
 import { generateRandomNumber, filterBooksByCategory } from '../list';
+import { removeBook, filterBook } from '../action';
 import Filter from '../component/categoryFilters';
 
 const BookList = ({
