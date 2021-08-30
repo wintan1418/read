@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { categories } from '../list';
 
-function CategoryFilter({ hamdleFilter }) {
+function CategoryFilter({ handleFilter }) {
   return (
     <div>
       <span>Filter through the Category: </span>
@@ -11,3 +11,9 @@ function CategoryFilter({ hamdleFilter }) {
     </div>
   );
 }
+
+CategoryFilter.PropTypes = {
+  hamdleFilter: PropTypes.func.isRequired,
+};
+
+export default CategoryFilter;
