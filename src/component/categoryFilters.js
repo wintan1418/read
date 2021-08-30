@@ -12,8 +12,8 @@ function CategoryFilter({ handleFilter }) {
   );
 }
 
-CategoryFilter.PropTypes = {
-  hamdleFilter: PropTypes.func.isRequired,
+CategoryFilter.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;
