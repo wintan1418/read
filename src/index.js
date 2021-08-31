@@ -1,17 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import App from './component/App';
 import reportWebVitals from './reportWebVitals';
+import store from './reducers/index';
+import { createBook } from './action/index';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const intialState = [
+  {
+    bookID: Math.floor(Math.random() * 1000),
+    title: 'king of boys',
+    category: 'Politics',
+  },
+  {
+    bookID: Math.floor(Math.random() * 1000),
+    title: 'hallowen',
+    category: 'Action',
+  },
+  {
+    bookID: Math.floor(Math.random() * 1000),
+    title: 'entomoogy',
+    category: 'Learning',
+  },
+];
+
+intialState.map(book => store.dispatch(createBook(book)));
+
+const jsx = (
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+ReactDOM.render(
+  jsx,
+  document.getElementById('root'),
+);
+
 reportWebVitals();
