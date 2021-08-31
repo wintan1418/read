@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { categories } from '../list';
+import { bookCategories } from '../helper/index';
 
-function CategoryFilter({ handleFilter }) {
+const CategoryFilter = ({ handleFilterChange }) => {
+  const [text, setText] = useState('All');
+
+  const handleTextChange = e => {
+    const { target: { value } } = e;
+
+    handleFilterChange(value);
+
+    setText(value);
+  };
+
   return (
-    <div>
-      <span>Filter through the Category: </span>
-      <select name="categoryFilter" id="categoryFilter" onChange={handleFilter}>
-        {['ALL', ...categories].map(category => <option key={category}>{category}</option>)}
-      </select>
-    </div>
+    <select
+      value={text}
+      onChange={handleTextChange}
+    >
+      <option value="All">All</option>
+      {
+        bookCategories.map(book => (
+          <option
+            key={book}
+            value={book}
+          >
+            {book}
+          </option>
+        ))
+      }
+    </select>
   );
-}
+};
 
 CategoryFilter.propTypes = {
-  handleFilter: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;
