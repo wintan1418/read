@@ -1,9 +1,11 @@
-import { combineReducers } from 'redux';
-// eslint-disable-next-line import/no-cycle
-import bookReducer from './Book';
+import { combineReducers, createStore } from 'redux';
+import booksReducer from './Book';
 import filterReducer from './filter';
 
-export default combineReducers({
-  books: bookReducer,
-  filter: filterReducer,
-});
+const store = createStore(
+  combineReducers({ books: booksReducer, filter: filterReducer }),
+  // eslint-disable-next-line no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
+
+export default store;

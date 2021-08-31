@@ -1,9 +1,9 @@
 import { FILTER_BOOK } from '../action-shade/index';
 
-export default (state = 'ALL', { type, payload }) => {
-  switch (type) {
+export default (state = 'All', action) => {
+  switch (action.type) {
     case FILTER_BOOK:
-      return payload;
+      return action.value;
     default:
       return state;
   }
