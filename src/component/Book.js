@@ -1,26 +1,40 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Book({ book, handleRemoveBook }) {
-  const {
-    id, title, category,
-  } = book;
-  return (
-    <tr>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td><button onClick={() => handleRemoveBook(id)} type="button">Delete</button></td>
-    </tr>
-  );
-}
+const Book = ({
+  bookID,
+  title,
+  category,
+  handleRemoveBook,
+}) => (
+  <tr>
+    <td>{bookID}</td>
+    <td>{title}</td>
+    <td>{category}</td>
+    <td>
+      <button
+        onClick={() => {
+          const book = {
+            bookID,
+            title,
+            category,
+          };
+
+          handleRemoveBook(book);
+        }}
+        type="button"
+      >
+        Remove
+      </button>
+    </td>
+  </tr>
+);
 
 Book.propTypes = {
-  book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-  }).isRequired,
+  bookID: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
 };
+
 export default Book;

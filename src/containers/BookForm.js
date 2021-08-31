@@ -5,7 +5,7 @@ import { createBook } from '../action';
 import { categories, generateRandomNumber } from '../list';
 
 const initialValue = {
-  author: '',
+  title: '',
   category: '',
 
 }; const BookForm = ({ createBook }) => {
@@ -47,8 +47,8 @@ const initialValue = {
     <div>
       <form onSubmit={handleSubmit}>
         <p id="error" />
-        <input type="text" name="title" value={input.title} placeholder="Input your title" onChange={handleChange} />
-        <select name="category" id="category" value={input.category} placeholder="Category" onChange={handleChange}>
+        <input type="text" name="title" value={input.title} placeholder="Title" onChange={handleChange} />
+        <select name="category" value={input.category} id="category" placeholder="Category" onChange={handleChange}>
           {allCategories}
         </select>
         <button type="submit">Add Book</button>

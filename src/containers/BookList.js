@@ -30,7 +30,6 @@ const BookList = ({
           <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Author</th>
             <th>Category</th>
             <th>Action</th>
           </tr>
