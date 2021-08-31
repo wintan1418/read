@@ -36,6 +36,7 @@ const BookForm = ({ createBook }) => {
       <div className="input-group">
         <input
           type="text"
+          placeholder="input your title"
           value={title}
           onChange={handleTitleChange}
         />

@@ -9,17 +9,17 @@ import { createBook } from './action/index';
 const intialState = [
   {
     bookID: Math.floor(Math.random() * 1000),
-    title: 'Lion Of Tanzania',
-    category: 'Fantazy',
+    title: 'king of boys',
+    category: 'Politics',
   },
   {
     bookID: Math.floor(Math.random() * 1000),
-    title: 'The New Horizon',
+    title: 'hallowen',
     category: 'Action',
   },
   {
     bookID: Math.floor(Math.random() * 1000),
-    title: 'Human Anatomie',
+    title: 'entomoogy',
     category: 'Learning',
   },
 ];
