@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { bookCategories } from '../helper/index';
+import { bookCategories } from '../aid/index';
 
 const CategoryFilter = ({ handleFilterChange }) => {
   const [text, setText] = useState('All');

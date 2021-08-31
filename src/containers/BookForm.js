@@ -1,62 +1,76 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createBook } from '../action';
-import { categories, generateRandomNumber } from '../list';
+import { createBook } from '../action/index';
+import { bookCategories } from '../aid/index';
 
-const initialValue = {
-  title: '',
-  category: '',
+const BookForm = ({ createBook }) => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
 
-}; const BookForm = ({ createBook }) => {
-  const [input, setInput] = useState(initialValue);
-  const allCategories = categories.map(category => (
-    <option
-      key={generateRandomNumber()}
-      value={category}
-    >
-      {category}
-    </option>
-  ));
-  const handleChange = b => {
-    const { value } = b.target;
-    setInput({ ...input, [b.target.name]: value.toUpperCase() });
-  }; const validateInputError = () => {
-    const { title, category } = input;
-    let error = '';
-    if (!title) {
-      error = 'You must need give a Title,please';
-    } else if (title.length < 5) {
-      error = 'Title length too short,input no less than five character';
-    } else if (!category) {
-      error = 'You must need give the category of this book';
-    } else if (category.length < 3) {
-      error = 'Too short!';
+  const handleTitleChange = event => {
+    setTitle(() => event.target.value);
+  };
+
+  const handleCategoryChange = event => {
+    setCategory(() => event.target.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (title && category) {
+      createBook({
+        bookID: Math.floor(Math.random() * 1000),
+        title,
+        category,
+      });
+
+      setTitle('');
+      setCategory('');
     }
-    return error;
-  }; const handleSubmit = b => {
-    b.preventDefault();
-    const error = validateInputError();
-    if (!error) {
-      createBook({ ...input, id: generateRandomNumber() });
-      setInput(initialValue);
-    } else {
-      document.querySelector('#error').textContent = error;
-    }
-  }; return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <p id="error" />
-        <input type="text" name="title" value={input.title} placeholder="Title" onChange={handleChange} />
-        <select name="category" value={input.category} id="category" placeholder="Category" onChange={handleChange}>
-          {allCategories}
+  };
+
+  return (
+    <form>
+      <div className="input-group">
+        <input
+          type="text"
+          value={title}
+          onChange={handleTitleChange}
+        />
+      </div>
+      <div className="input-group">
+        <select
+          value={category}
+          onChange={handleCategoryChange}
+        >
+          <option value="">
+            none
+          </option>
+          {
+            bookCategories.map(category => (
+              <option key={`key-${category}`} value={category}>
+                {category}
+              </option>
+            ))
+          }
         </select>
-        <button type="submit">Add Book</button>
-      </form>
-    </div>
+      </div>
+      <button
+        type="button"
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
+    </form>
   );
-}; BookForm.propTypes = {
+};
+
+BookForm.propTypes = {
   createBook: PropTypes.func.isRequired,
-}; const mapDispatchToProps = dispatch => ({
-  createBook: book => dispatch(createBook(book)),
-}); export default connect(null, mapDispatchToProps)(BookForm);
+};
+
+const mapDispatchToProps = { createBook };
+
+export default connect(null, mapDispatchToProps)(BookForm);
