@@ -2,29 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../component/Book';
-import { generateRandomNumber, filterBooksByCategory } from '../list';
-import { removeBook, filterBook } from '../action';
-import Filter from '../component/categoryFilters';
+import { removeBook, filterBook } from '../action/index';
+import CategoryFilter from '../component/categoryFilters';
+import { getFilteredBooks } from '../aid/index';
 
 const BookList = ({
-  books, deleteBook, filterBook, filterParam,
+  books,
+  filter,
+  removeBook,
+  filterBook,
 }) => {
-  const handleRemoveBook = id => deleteBook(id);
-  const handleFilter = b => filterBook(b.target.value);
+  const filteredBooks = getFilteredBooks(books, filter);
 
-  const filteredBooks = filterParam === 'All' ? books : filterBooksByCategory(books, filterParam);
-
-  const allBooks = filteredBooks.map(book => (
-    <Book
-      id={generateRandomNumber()}
-      handleRemoveBook={handleRemoveBook}
-      book={book}
-      key={generateRandomNumber()}
-    />
-  ));
   return (
     <div>
-      <Filter handleFilter={handleFilter} />
+      <CategoryFilter handleFilterChange={filterBook} />
       <table>
         <thead>
           <tr>
@@ -35,7 +27,19 @@ const BookList = ({
           </tr>
         </thead>
         <tbody>
-          {allBooks}
+
+          {' '}
+          {
+            filteredBooks.map(book => (
+              <Book
+                key={book.bookID}
+                bookID={book.bookID}
+                title={book.title}
+                category={book.category}
+                handleRemoveBook={removeBook}
+              />
+            ))
+          }
         </tbody>
       </table>
     </div>
@@ -43,20 +47,21 @@ const BookList = ({
 };
 
 BookList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired,
-  deleteBook: PropTypes.func.isRequired,
+  books: PropTypes.arrayOf(PropTypes.object),
+  removeBook: PropTypes.func.isRequired,
   filterBook: PropTypes.func.isRequired,
-  filterParam: PropTypes.string.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = state => ({
-  books: state.books,
-  filterParam: state.filter,
-});
+BookList.defaultProps = {
+  books: [],
+};
 
-const mapDispatchToProps = dispatch => ({
-  deleteBook: id => dispatch(removeBook(id)),
-  filterBook: category => dispatch(filterBook(category)),
+const mapDispatchToProps = { removeBook, filterBook };
+
+const mapStateToProps = ({ books, filter }) => ({
+  books,
+  filter,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
