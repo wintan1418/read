@@ -1,13 +1,14 @@
-/* eslint-disable import/named */
-import { CREATE_BOOK, REMOVE_BOOK } from '../action-shade/index';
-import { defaultBooks } from '../list';
+import { CREATE_BOOK, REMOVE_BOOK } from '../action-shade';
 
-export default (state = defaultBooks, { type, payload }) => {
-  switch (type) {
+export default (state = [], action) => {
+  switch (action.type) {
     case CREATE_BOOK:
-      return [...state, payload];
+      return [
+        ...state,
+        action.book,
+      ];
     case REMOVE_BOOK:
-      return state.filter(book => book.id !== payload);
+      return state.filter(book => book.bookID !== action.book.bookID);
     default:
       return state;
   }
