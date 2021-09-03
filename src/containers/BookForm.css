@@ -1,0 +1,28 @@
+.form-container {
+  border-top: 1px solid rgba(144, 144, 144, 0.26);
+  padding-top: 25px;
+}
+
+.form-container h3 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.form-container h3,
+.select-input,
+.title-input,
+.form .button {
+  font-family: sans-serif, Montserrat;
+}
+
+.form-container .form {
+  display: flex;
+  padding-top: 15px;
+}
+
+.title-input {
+  flex-grow: 1;
+  margin-right: 30px;
+}
