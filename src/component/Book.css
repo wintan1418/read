@@ -11,3 +11,42 @@
 .book-details {
   justify-content: space-between;
 }
+
+.book-container,
+.book-details,
+.complete-container,
+.complete,
+.complete-value,
+.update {
+  display: flex;
+}
+
+.book-container:last-child {
+  margin: 0;
+}
+
+.category {
+  opacity: 0.5;
+  font-size: 1px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+}
+
+.category,
+.title,
+.percent,
+.faded-text,
+.update .title,
+.update .chapter {
+  color: #121212;
+}
+
+.author,
+.actions button {
+  color: #4386bf;
+}
