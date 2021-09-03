@@ -20,7 +20,7 @@ const Book = ({
         <button
           type="button"
         >
-          comments
+          give your feedback
         </button>
         <button
           type="button"
@@ -56,7 +56,7 @@ const Book = ({
         </div>
       </div>
       <div className="update">
-        <span className="title">CURRENT CHAPTER</span>
+        <span className="title">YOUR CURRENT CHAPTER</span>
         <span className="chapter">{`Chapter ${Math.floor(Math.random() * 34 + 1)}`}</span>
         <button type="button">UPDATE PROGRESS</button>
       </div>
