@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../action/index';
 import { bookCategories } from '../aid/index';
+import './BookForm.css';
 
 const BookForm = ({ createBook }) => {
   const [title, setTitle] = useState('');
@@ -39,12 +40,15 @@ const BookForm = ({ createBook }) => {
           <input
             type="text"
             placeholder="input your title"
+            className="title-field"
             value={title}
             onChange={handleTitleChange}
           />
         </div>
         <div className="input-group">
           <select
+            placeholder="Category"
+            className="select-input"
             value={category}
             onChange={handleCategoryChange}
           >
