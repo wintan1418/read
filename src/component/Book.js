@@ -7,6 +7,14 @@ const Book = ({
   category,
   handleRemoveBook,
 }) => (
+  <div className="book-container">
+    <div className="book-details">
+      <div>
+        <div className="category">{category}</div>
+        <div className="title">{title}</div>
+        <div className="author">author X</div>
+        <div className="target-category">{ category }</div>
+      </div>
   <tr>
     <td>{bookID}</td>
     <td>{title}</td>
