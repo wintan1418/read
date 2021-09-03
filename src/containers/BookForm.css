@@ -44,3 +44,17 @@
   outline: none;
   margin-right: 30px;
 }
+
+.title-input::placeholder,
+.select-input option:first-child {
+  color: rgb(200, 200, 200);
+}
+
+.form .button {
+  background-color: #0290ff;
+  color: white;
+  padding: 0 40px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
