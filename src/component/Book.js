@@ -15,6 +15,24 @@ const Book = ({
         <div className="author">author X</div>
         <div className="target-category">{ category }</div>
       </div>
+      <div className="actions">
+        <button
+          type="button"
+          >
+          comments
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            const book = {
+              bookID,
+              title,
+              category,
+            };
+
+            handleRemoveBook(book);
+          }}
+        >
   <tr>
     <td>{bookID}</td>
     <td>{title}</td>
