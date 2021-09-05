@@ -6,8 +6,8 @@ const App = () => (
   <div className="App-container">
     <div className="page-container">
       <div className="content-container">
-        <BooksForm />
         <BooksList />
+        <BooksForm />
       </div>
     </div>
   </div>

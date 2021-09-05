@@ -2,6 +2,8 @@
 
 As the name describe this project is a store for book where you can add books that you are about to read to keep track of your progress in them.
 
+![project screenshot](./bookstore.png)
+
 
 ## Built With
 
