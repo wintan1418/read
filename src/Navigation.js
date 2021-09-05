@@ -1,11 +1,11 @@
 import React from 'react';
-import './Header.css';
+import './Navigation.css';
 
 const Header = () => (
   <div className="header-container">
     <ul className="header">
       <li className="header__logo header__link">
-        Bookstore CMS
+        Your library
       </li>
       <li className="header__book_link header__link">
         BOOKS

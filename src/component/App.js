@@ -1,10 +1,12 @@
 import React from 'react';
 import BooksForm from '../containers/BookForm';
 import BooksList from '../containers/BookList';
+import Navigation from '../Navigation';
 
 const App = () => (
   <div className="App-container">
     <div className="page-container">
+      <Navigation />
       <div className="content-container">
         <BooksList />
         <BooksForm />
