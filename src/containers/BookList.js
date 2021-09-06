@@ -18,14 +18,7 @@ const BookList = ({
     <div>
       <CategoryFilter handleFilterChange={filterBook} />
       <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+
         <tbody>
 
           {' '}
