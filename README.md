@@ -18,7 +18,7 @@ As the name describe this project is a store for book where you can add books th
 
 ## Live Demo
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://goofy-einstein-2f45f8.netlify.app/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://app.netlify.com/sites/practical-mcclintock-3be1d6)
 
 ## Getting Started
 
