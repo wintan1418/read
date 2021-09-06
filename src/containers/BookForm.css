@@ -23,12 +23,12 @@
 }
 
 .title-field {
-  flex-grow: 1;
+  flex-grow: 0.8;
   margin-right: 30px;
 }
 
 .select-input {
-  width: 200px;
+  width: 150px;
 }
 
 .select-input,

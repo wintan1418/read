@@ -6,8 +6,8 @@ import { bookCategories } from '../aid/index';
 import './BookForm.css';
 
 const BookForm = ({ createBook }) => {
-  const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleTitleChange = event => {
     setTitle(() => event.target.value);
@@ -23,12 +23,12 @@ const BookForm = ({ createBook }) => {
     if (title && category) {
       createBook({
         bookID: Math.floor(Math.random() * 1000),
-        title,
         category,
+        title,
       });
 
-      setTitle('');
       setCategory('');
+      setTitle('');
     }
   };
 
@@ -65,7 +65,7 @@ const BookForm = ({ createBook }) => {
           type="button"
           onClick={handleSubmit}
         >
-          ADD A BOOK
+          ADD BOOK
         </button>
       </form>
     </div>

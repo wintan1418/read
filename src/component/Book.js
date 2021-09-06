@@ -11,24 +11,25 @@ const Book = ({
   <div className="book-container">
     <div className="book-details">
       <div>
-        <div className="category">{category}</div>
+        <div className="target-category">{ category }</div>
         <div className="title">{title}</div>
         <div className="author">AUTHOR X</div>
-        <div className="target-category">{ category }</div>
+        <div className="category">{category}</div>
+
       </div>
       <div className="actions">
         <button
           type="button"
         >
-          give your feedback
+          comments
         </button>
         <button
           type="button"
           onClick={() => {
             const book = {
               bookID,
-              title,
               category,
+              title,
             };
 
             handleRemoveBook(book);
@@ -56,7 +57,7 @@ const Book = ({
         </div>
       </div>
       <div className="update">
-        <span className="title">YOUR CURRENT CHAPTER</span>
+        <span className="title"> CURRENT CHAPTER</span>
         <span className="chapter">{`Chapter ${Math.floor(Math.random() * 34 + 1)}`}</span>
         <button type="button">UPDATE PROGRESS</button>
       </div>
@@ -66,8 +67,8 @@ const Book = ({
 
 Book.propTypes = {
   bookID: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
 };
 

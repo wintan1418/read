@@ -9,19 +9,22 @@ import './index.css';
 
 const intialState = [
   {
-    bookID: Math.floor(Math.random() * 1000),
-    title: 'king of boys',
     category: 'Politics',
+    title: 'king of boys',
+    bookID: Math.floor(Math.random() * 1000),
+
   },
   {
-    bookID: Math.floor(Math.random() * 1000),
-    title: 'hallowen',
     category: 'Action',
+    title: 'hallowen',
+    bookID: Math.floor(Math.random() * 1000),
+
   },
   {
-    bookID: Math.floor(Math.random() * 1000),
-    title: 'entomoogy',
     category: 'Learning',
+    title: 'entomoogy',
+    bookID: Math.floor(Math.random() * 1000),
+
   },
 ];
 
