@@ -15,7 +15,9 @@ const Header = () => (
       </li>
     </ul>
     <div className="user">
-      <span className="user-logo" />
+      <span className="user-logo">
+        <img src="https://th.bing.com/th/id/OIP.0PQ2zvxDAtM_hsQ_aqIpWgAAAA?pid=ImgDet&w=170&h=170&c=7" alt="dip" />
+      </span>
     </div>
   </div>
 );
