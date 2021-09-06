@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import CategoryFilter from './component/categoryFilters';
 import './Navigation.css';
 
-const Header = () => (
+const Header = ({ handleFilter }) => (
   <div className="header-container">
     <ul className="header">
       <li className="header__logo header__link">
@@ -10,9 +12,7 @@ const Header = () => (
       <li className="header__book_link header__link">
         BOOKS
       </li>
-      <li className="header__link">
-        CATEGORIES
-      </li>
+      <CategoryFilter handleFilter={handleFilter} />
     </ul>
     <div className="user">
       <span className="user-logo">
@@ -21,5 +21,8 @@ const Header = () => (
     </div>
   </div>
 );
+Header.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
+};
 
 export default Header;

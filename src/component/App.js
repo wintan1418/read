@@ -10,6 +10,7 @@ const App = () => (
       <Navigation />
       <div className="content-container">
         <BooksList />
+        <div className="line" />
         <BooksForm />
       </div>
     </div>
