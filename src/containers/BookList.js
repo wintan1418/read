@@ -3,20 +3,19 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../component/Book';
 import { removeBook, filterBook } from '../action/index';
-import CategoryFilter from '../component/categoryFilters';
 import { getFilteredBooks } from '../aid/index';
 
 const BookList = ({
   books,
   filter,
   removeBook,
-  filterBook,
+
 }) => {
   const filteredBooks = getFilteredBooks(books, filter);
 
   return (
     <div>
-      <CategoryFilter handleFilterChange={filterBook} />
+
       <table>
 
         <tbody>
@@ -42,7 +41,6 @@ const BookList = ({
 BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object),
   removeBook: PropTypes.func.isRequired,
-  filterBook: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
 };
 
