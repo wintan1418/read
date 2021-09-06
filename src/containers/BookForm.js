@@ -65,7 +65,7 @@ const BookForm = ({ createBook }) => {
           type="button"
           onClick={handleSubmit}
         >
-          ADD BOOK
+          ADD A BOOK
         </button>
       </form>
     </div>
