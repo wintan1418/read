@@ -1,0 +1,161 @@
+.book-container {
+  background-color: white;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  padding: 40px;
+  height: 160px;
+  margin-bottom: 2.5rem;
+}
+
+.book-container,
+.book-details {
+  justify-content: space-between;
+}
+
+.book-container,
+.book-details,
+.complete-container,
+.complete,
+.complete-value,
+.update {
+  display: flex;
+}
+
+.book-container:last-child {
+  margin: 0;
+}
+
+.category,
+.actions button,
+.update > button,
+.update .title,
+.update .chapter {
+  font-family: sans-serif, RobotoSlab;
+}
+
+.complete-container,
+.complete,
+.update > button {
+  align-items: center;
+}
+
+.actions button,
+.update > button,
+.actions button:last-child {
+  border: none;
+}
+
+.actions button:first-child {
+  padding-left: 0;
+}
+
+.complete {
+  justify-content: center;
+  padding: 0 80px 0 30px;
+  border-right: 1px solid rgba(151, 151, 151, 0.377);
+}
+
+.circle {
+  width: 68px;
+  height: 68px;
+  border: 5px solid #0290ff;
+  border-top-color: rgba(206, 206, 206, 0.404);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  margin-right: 30px;
+}
+
+.book-details,
+.complete-value,
+.update {
+  flex-direction: column;
+}
+
+.category {
+  opacity: 0.5;
+  font-size: 1px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+}
+
+.category,
+.title,
+.percent,
+.faded-text,
+.update .title,
+.update .chapter {
+  color: #121212;
+}
+
+.author,
+.actions button {
+  color: #4386bf;
+}
+
+.author {
+  margin-bottom: 15px;
+}
+
+.author,
+.actions button,
+.update > button,
+.faded-text,
+.update .title,
+.update .chapter {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.actions button {
+  background: none;
+  padding: 0 20px;
+  border-right: 1px solid rgba(165, 165, 165, 0.466);
+  cursor: pointer;
+}
+
+.update > button {
+  letter-spacing: 0.5px;
+  color: #fff;
+  padding: 7px 19px 8px 22px;
+  border-radius: 2px;
+  background-color: #0290ff;
+}
+
+.percent {
+  font-size: 32px;
+}
+
+.percent,
+.faded-text {
+  font-family: sans-serif, Montserrat;
+}
+
+.faded-text {
+  opacity: 0.5;
+}
+
+.update {
+  padding-left: 30px;
+  padding-right: 100px;
+}
+
+.update .title {
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+
+.update .chapter {
+  margin-bottom: 30px;
+  letter-spacing: -0.4px;
+}
+
+.target-category {
+  font-size: 20px;
+  color: #121212;
+  margin-top: 10px;
+}
